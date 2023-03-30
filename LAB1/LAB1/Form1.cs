@@ -27,6 +27,7 @@ namespace LAB1
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     ds.Clear(); ds.Relations.Clear(); denum_tb.DataBindings.Clear(); pret_tb.DataBindings.Clear(); idcat_tb.DataBindings.Clear();
+
                     parentAdapter.SelectCommand = new SqlCommand("SELECT *FROM Categorie;", conn);
                     childAdapter.SelectCommand = new SqlCommand("SELECT *FROM Produs;", conn);
                     parentAdapter.Fill(ds, "Categorie");
@@ -43,8 +44,6 @@ namespace LAB1
                     denum_tb.DataBindings.Add("Text", childBS, "denumire");
                     pret_tb.DataBindings.Add("Text", childBS, "pret");
                     idcat_tb.DataBindings.Add("Text", childBS, "id_cat");
-
-
                 }
 
             }
@@ -78,6 +77,27 @@ namespace LAB1
             }
         }
 
+        private void disp_only_cat_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (SqlConnection conne = new SqlConnection(connectionString))
+                {
+                    pds.Clear(); cds.Clear();
+                    denum_tb.DataBindings.Clear(); pret_tb.DataBindings.Clear(); idcat_tb.DataBindings.Clear();
+                    parentAdapter.SelectCommand = new SqlCommand("SELECT * FROM Categorie;", conne);
+                    parentAdapter.Fill(pds, "Categorie");
+                    parentBS.DataSource = pds.Tables["Categorie"];
+                    dataGridViewCategorie.DataSource = parentBS;
+                    dataGridViewProdus.DataSource = null;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         private void delete_prod_Click(object sender, EventArgs e)
         {
             try
@@ -97,7 +117,7 @@ namespace LAB1
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -107,18 +127,18 @@ namespace LAB1
         private void update_prod_Click(object sender, EventArgs e)
         {
             try
-            { 
+            {
                 int x;
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
-             
+
                     childAdapter.UpdateCommand = new SqlCommand("Update Produs set denumire=@f, pret=@l, id_cat=@i where id_produs=@id", conn);
                     childAdapter.UpdateCommand.Parameters.Add("@f", SqlDbType.VarChar).Value = denum_tb.Text;
                     childAdapter.UpdateCommand.Parameters.Add("@l", SqlDbType.Int).Value = pret_tb.Text;
                     childAdapter.UpdateCommand.Parameters.Add("@i", SqlDbType.Int).Value = idcat_tb.Text;
                     childAdapter.UpdateCommand.Parameters.Add("@id", SqlDbType.Int).Value = ds.Tables["Produs"].Rows[childBS.Position][0];
                     conn.Open();
-                    x=childAdapter.UpdateCommand.ExecuteNonQuery();
+                    x = childAdapter.UpdateCommand.ExecuteNonQuery();
                     conn.Close();
                     if (x >= 1)
                     {
@@ -126,12 +146,33 @@ namespace LAB1
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-}
+        }
 
+        private void add_prod_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    childAdapter.InsertCommand = new SqlCommand("INSERT INTO Produs VALUES (@d, @p, @id)", conn);
+                    childAdapter.InsertCommand.Parameters.Add("@d", SqlDbType.VarChar).Value = car_denum.Text;
+                    childAdapter.InsertCommand.Parameters.Add("@p", SqlDbType.Int).Value = cat_pret.Text;
+                    childAdapter.InsertCommand.Parameters.Add("@id", SqlDbType.Int).Value = ds.Tables["Categorie"].Rows[parentBS.Position][0];
+                    conn.Open();
+                    childAdapter.InsertCommand.ExecuteNonQuery();
+                    conn.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
 
+        
     }
 }

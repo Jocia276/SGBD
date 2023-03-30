@@ -43,6 +43,9 @@
             denum_tb = new TextBox();
             pret_tb = new TextBox();
             idcat_tb = new TextBox();
+            car_denum = new TextBox();
+            cat_pret = new TextBox();
+            disp_only_cat = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridViewProdus).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridViewCategorie).BeginInit();
             SuspendLayout();
@@ -119,12 +122,13 @@
             // 
             // add_prod
             // 
-            add_prod.Location = new Point(1180, 530);
+            add_prod.Location = new Point(1190, 574);
             add_prod.Name = "add_prod";
             add_prod.Size = new Size(94, 29);
             add_prod.TabIndex = 8;
             add_prod.Text = "ADD";
             add_prod.UseVisualStyleBackColor = true;
+            add_prod.Click += add_prod_Click;
             // 
             // afisare_produse
             // 
@@ -162,7 +166,6 @@
             label5.Size = new Size(91, 20);
             label5.TabIndex = 12;
             label5.Text = "Id Categorie";
-
             // 
             // denum_tb
             // 
@@ -185,11 +188,38 @@
             idcat_tb.Size = new Size(178, 27);
             idcat_tb.TabIndex = 15;
             // 
+            // car_denum
+            // 
+            car_denum.Location = new Point(880, 545);
+            car_denum.Name = "car_denum";
+            car_denum.Size = new Size(178, 27);
+            car_denum.TabIndex = 16;
+            // 
+            // cat_pret
+            // 
+            cat_pret.Location = new Point(880, 608);
+            cat_pret.Name = "cat_pret";
+            cat_pret.Size = new Size(178, 27);
+            cat_pret.TabIndex = 17;
+            // 
+            // disp_only_cat
+            // 
+            disp_only_cat.Location = new Point(1000, 75);
+            disp_only_cat.Name = "disp_only_cat";
+            disp_only_cat.Size = new Size(198, 29);
+            disp_only_cat.TabIndex = 18;
+            disp_only_cat.Text = "Display only Categories";
+            disp_only_cat.UseVisualStyleBackColor = true;
+            disp_only_cat.Click += disp_only_cat_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1399, 692);
+            Controls.Add(disp_only_cat);
+            Controls.Add(cat_pret);
+            Controls.Add(car_denum);
             Controls.Add(idcat_tb);
             Controls.Add(pret_tb);
             Controls.Add(denum_tb);
@@ -230,5 +260,8 @@
         private TextBox denum_tb;
         private TextBox pret_tb;
         private TextBox idcat_tb;
+        private TextBox car_denum;
+        private TextBox cat_pret;
+        private Button disp_only_cat;
     }
 }
