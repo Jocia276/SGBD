@@ -2008,11 +2008,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\casia\\OneDrive\\Desktop\\LAB1\\LAB1\\LAB1.csproj",
+      "projectUniqueName": "C:\\Users\\casia\\OneDrive\\Desktop\\SGBD\\SGBD\\LAB1\\LAB1\\LAB1.csproj",
       "projectName": "LAB1",
-      "projectPath": "C:\\Users\\casia\\OneDrive\\Desktop\\LAB1\\LAB1\\LAB1.csproj",
+      "projectPath": "C:\\Users\\casia\\OneDrive\\Desktop\\SGBD\\SGBD\\LAB1\\LAB1\\LAB1.csproj",
       "packagesPath": "C:\\Users\\casia\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\casia\\OneDrive\\Desktop\\LAB1\\LAB1\\obj\\",
+      "outputPath": "C:\\Users\\casia\\OneDrive\\Desktop\\SGBD\\SGBD\\LAB1\\LAB1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\casia\\AppData\\Roaming\\NuGet\\NuGet.Config",

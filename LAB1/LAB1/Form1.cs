@@ -1,6 +1,7 @@
 using Microsoft.Data.SqlClient;
 using System.Data;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace LAB1
 {
@@ -25,7 +26,7 @@ namespace LAB1
             {
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
-                    ds.Clear(); cds.Clear(); ds.Relations.Clear();
+                    ds.Clear(); ds.Relations.Clear(); denum_tb.DataBindings.Clear(); pret_tb.DataBindings.Clear(); idcat_tb.DataBindings.Clear();
                     parentAdapter.SelectCommand = new SqlCommand("SELECT *FROM Categorie;", conn);
                     childAdapter.SelectCommand = new SqlCommand("SELECT *FROM Produs;", conn);
                     parentAdapter.Fill(ds, "Categorie");
@@ -39,6 +40,10 @@ namespace LAB1
                     childBS.DataSource = parentBS;
                     childBS.DataMember = "FK_Categorie_Produs";
                     dataGridViewProdus.DataSource = childBS;
+                    denum_tb.DataBindings.Add("Text", childBS, "denumire");
+                    pret_tb.DataBindings.Add("Text", childBS, "pret");
+                    idcat_tb.DataBindings.Add("Text", childBS, "id_cat");
+
 
                 }
 
@@ -57,10 +62,14 @@ namespace LAB1
                 using (SqlConnection conn1 = new SqlConnection(connectionString))
                 {
                     cds.Clear();
+                    denum_tb.DataBindings.Clear(); pret_tb.DataBindings.Clear(); idcat_tb.DataBindings.Clear();
                     childAdapter.SelectCommand = new SqlCommand("SELECT * FROM Produs;", conn1);
                     childAdapter.Fill(cds, "Produs");
                     childBS.DataSource = cds.Tables["Produs"];
                     dataGridViewProdus.DataSource = childBS;
+                    denum_tb.DataBindings.Add("Text", childBS, "denumire");
+                    pret_tb.DataBindings.Add("Text", childBS, "pret");
+                    idcat_tb.DataBindings.Add("Text", childBS, "id_cat");
                 }
             }
             catch (Exception ex)
@@ -71,15 +80,58 @@ namespace LAB1
 
         private void delete_prod_Click(object sender, EventArgs e)
         {
+            try
+            {
+                int x;
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+
+                    childAdapter.DeleteCommand = new SqlCommand("Delete Produs where id_produs=@id", conn);
+                    childAdapter.DeleteCommand.Parameters.Add("@id", SqlDbType.Int).Value = ds.Tables["Produs"].Rows[childBS.Position][0];
+                    conn.Open();
+                    x = childAdapter.DeleteCommand.ExecuteNonQuery();
+                    conn.Close();
+                    if (x >= 1)
+                    {
+                        MessageBox.Show("the record has been deleted");
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
         }
 
         private void update_prod_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Form2 f2 = new Form2();
-            f2.ShowDialog();
-            this.Close();
-        }
+            try
+            { 
+                int x;
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+             
+                    childAdapter.UpdateCommand = new SqlCommand("Update Produs set denumire=@f, pret=@l, id_cat=@i where id_produs=@id", conn);
+                    childAdapter.UpdateCommand.Parameters.Add("@f", SqlDbType.VarChar).Value = denum_tb.Text;
+                    childAdapter.UpdateCommand.Parameters.Add("@l", SqlDbType.Int).Value = pret_tb.Text;
+                    childAdapter.UpdateCommand.Parameters.Add("@i", SqlDbType.Int).Value = idcat_tb.Text;
+                    childAdapter.UpdateCommand.Parameters.Add("@id", SqlDbType.Int).Value = ds.Tables["Produs"].Rows[childBS.Position][0];
+                    conn.Open();
+                    x=childAdapter.UpdateCommand.ExecuteNonQuery();
+                    conn.Close();
+                    if (x >= 1)
+                    {
+                        MessageBox.Show("the record has been updated");
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+}
+
+
     }
 }

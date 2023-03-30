@@ -37,6 +37,12 @@
             update_prod = new Button();
             add_prod = new Button();
             afisare_produse = new Button();
+            label3 = new Label();
+            label4 = new Label();
+            label5 = new Label();
+            denum_tb = new TextBox();
+            pret_tb = new TextBox();
+            idcat_tb = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dataGridViewProdus).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridViewCategorie).BeginInit();
             SuspendLayout();
@@ -83,7 +89,7 @@
             // 
             // display_cat
             // 
-            display_cat.Location = new Point(882, 530);
+            display_cat.Location = new Point(1215, 75);
             display_cat.Name = "display_cat";
             display_cat.Size = new Size(150, 29);
             display_cat.TabIndex = 4;
@@ -93,7 +99,7 @@
             // 
             // delete_prod
             // 
-            delete_prod.Location = new Point(256, 530);
+            delete_prod.Location = new Point(354, 75);
             delete_prod.Name = "delete_prod";
             delete_prod.Size = new Size(131, 29);
             delete_prod.TabIndex = 6;
@@ -103,7 +109,7 @@
             // 
             // update_prod
             // 
-            update_prod.Location = new Point(503, 530);
+            update_prod.Location = new Point(451, 573);
             update_prod.Name = "update_prod";
             update_prod.Size = new Size(123, 29);
             update_prod.TabIndex = 7;
@@ -122,7 +128,7 @@
             // 
             // afisare_produse
             // 
-            afisare_produse.Location = new Point(47, 530);
+            afisare_produse.Location = new Point(532, 75);
             afisare_produse.Name = "afisare_produse";
             afisare_produse.Size = new Size(94, 29);
             afisare_produse.TabIndex = 9;
@@ -130,11 +136,66 @@
             afisare_produse.UseVisualStyleBackColor = true;
             afisare_produse.Click += afisare_produse_Click;
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(87, 521);
+            label3.Name = "label3";
+            label3.Size = new Size(74, 20);
+            label3.TabIndex = 10;
+            label3.Text = "Denumire";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(102, 574);
+            label4.Name = "label4";
+            label4.Size = new Size(35, 20);
+            label4.TabIndex = 11;
+            label4.Text = "Pret";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(80, 629);
+            label5.Name = "label5";
+            label5.Size = new Size(91, 20);
+            label5.TabIndex = 12;
+            label5.Text = "Id Categorie";
+
+            // 
+            // denum_tb
+            // 
+            denum_tb.Location = new Point(209, 521);
+            denum_tb.Name = "denum_tb";
+            denum_tb.Size = new Size(178, 27);
+            denum_tb.TabIndex = 13;
+            // 
+            // pret_tb
+            // 
+            pret_tb.Location = new Point(209, 574);
+            pret_tb.Name = "pret_tb";
+            pret_tb.Size = new Size(178, 27);
+            pret_tb.TabIndex = 14;
+            // 
+            // idcat_tb
+            // 
+            idcat_tb.Location = new Point(209, 626);
+            idcat_tb.Name = "idcat_tb";
+            idcat_tb.Size = new Size(178, 27);
+            idcat_tb.TabIndex = 15;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1399, 692);
+            Controls.Add(idcat_tb);
+            Controls.Add(pret_tb);
+            Controls.Add(denum_tb);
+            Controls.Add(label5);
+            Controls.Add(label4);
+            Controls.Add(label3);
             Controls.Add(afisare_produse);
             Controls.Add(add_prod);
             Controls.Add(update_prod);
@@ -163,5 +224,11 @@
         private Button update_prod;
         private Button add_prod;
         private Button afisare_produse;
+        private Label label3;
+        private Label label4;
+        private Label label5;
+        private TextBox denum_tb;
+        private TextBox pret_tb;
+        private TextBox idcat_tb;
     }
 }

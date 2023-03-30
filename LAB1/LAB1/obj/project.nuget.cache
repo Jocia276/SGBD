@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4KYdKeQN4Z4MJ4A5lcjtCMxvyrqlh80IImMJbhH7sHkn6CCZgPqQKajTF+3JuN1vdK7lE5B1bDaoAN+rEOWQaA==",
+  "dgSpecHash": "oy/MpAJiMQ/FHUzasTxcbN21tPOVqWq3ynG7exQvFNBlWUI2ajwNa9C3/8t9quhv6cN+kLaV69vROwmiIT7dhA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\casia\\OneDrive\\Desktop\\LAB1\\LAB1\\LAB1.csproj",
+  "projectFilePath": "C:\\Users\\casia\\OneDrive\\Desktop\\SGBD\\SGBD\\LAB1\\LAB1\\LAB1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\casia\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\casia\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
