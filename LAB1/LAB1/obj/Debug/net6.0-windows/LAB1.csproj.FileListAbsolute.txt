@@ -83,3 +83,4 @@ C:\Users\casia\OneDrive\Desktop\SGBD\SGBD\LAB1\LAB1\obj\Debug\net6.0-windows\ref
 C:\Users\casia\OneDrive\Desktop\SGBD\SGBD\LAB1\LAB1\obj\Debug\net6.0-windows\LAB1.pdb
 C:\Users\casia\OneDrive\Desktop\SGBD\SGBD\LAB1\LAB1\obj\Debug\net6.0-windows\LAB1.genruntimeconfig.cache
 C:\Users\casia\OneDrive\Desktop\SGBD\SGBD\LAB1\LAB1\obj\Debug\net6.0-windows\ref\LAB1.dll
+C:\Users\casia\OneDrive\Desktop\SGBD\SGBD\LAB1\LAB1\obj\Debug\net6.0-windows\LAB1.Properties.Resources.resources
