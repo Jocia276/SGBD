@@ -1,0 +1,15 @@
+use Problema2
+go
+
+-- T2: SELECT + DELAY + SELECT
+
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED
+BEGIN TRAN
+SELECT *FROM Melodii
+WAITFOR DELAY '00:00:10'
+SELECT *FROM Melodii
+COMMIT TRAN
+
+ -- delete from Melodii where titlu = 'dangerous'
+
+SELECT *FROM Melodii
