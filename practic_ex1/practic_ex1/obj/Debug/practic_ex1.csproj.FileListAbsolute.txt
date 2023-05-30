@@ -1,0 +1,11 @@
+C:\Users\casia\OneDrive\Desktop\practic_ex1\practic_ex1\bin\Debug\practic_ex1.exe.config
+C:\Users\casia\OneDrive\Desktop\practic_ex1\practic_ex1\bin\Debug\practic_ex1.exe
+C:\Users\casia\OneDrive\Desktop\practic_ex1\practic_ex1\bin\Debug\practic_ex1.pdb
+C:\Users\casia\OneDrive\Desktop\practic_ex1\practic_ex1\obj\Debug\practic_ex1.csproj.AssemblyReference.cache
+C:\Users\casia\OneDrive\Desktop\practic_ex1\practic_ex1\obj\Debug\practic_ex1.csproj.SuggestedBindingRedirects.cache
+C:\Users\casia\OneDrive\Desktop\practic_ex1\practic_ex1\obj\Debug\practic_ex1.Form1.resources
+C:\Users\casia\OneDrive\Desktop\practic_ex1\practic_ex1\obj\Debug\practic_ex1.Properties.Resources.resources
+C:\Users\casia\OneDrive\Desktop\practic_ex1\practic_ex1\obj\Debug\practic_ex1.csproj.GenerateResource.cache
+C:\Users\casia\OneDrive\Desktop\practic_ex1\practic_ex1\obj\Debug\practic_ex1.csproj.CoreCompileInputs.cache
+C:\Users\casia\OneDrive\Desktop\practic_ex1\practic_ex1\obj\Debug\practic_ex1.exe
+C:\Users\casia\OneDrive\Desktop\practic_ex1\practic_ex1\obj\Debug\practic_ex1.pdb
