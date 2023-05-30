@@ -1,0 +1,17 @@
+use MagazinAlimentar
+go
+
+-- T2: SELECT + DELAY + SELECT
+
+SELECT *FROM Produs
+
+SET TRANSACTION ISOLATION LEVEL REPEATABLE READ
+BEGIN TRAN
+SELECT *FROM Produs
+WAITFOR DELAY '00:00:10'
+SELECT *FROM Produs
+COMMIT TRAN
+
+SELECT *FROM Produs
+
+--delete from Produs where denumire = 'conopida'

@@ -1,0 +1,15 @@
+use MagazinAlimentar
+go
+
+-- T2: SELECT + DELAY + SELECT
+
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED
+BEGIN TRAN
+SELECT *FROM Produs
+WAITFOR DELAY '00:00:10'
+SELECT *FROM Produs
+COMMIT TRAN
+
+-- delete from Produs where denumire = 'pizza'
+
+SELECT *FROM Produs

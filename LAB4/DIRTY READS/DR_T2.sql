@@ -1,0 +1,15 @@
+use MagazinAlimentar
+
+-- T2: SELECT + DELAY + ROLLBACK
+
+select *from Produs
+
+SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
+BEGIN TRAN
+SELECT *FROM Produs
+WAITFOR DELAY '00:00:10'
+SELECT *FROM Produs
+COMMIT TRAN
+
+select *from Produs
+
